@@ -1,15 +1,9 @@
-const people = [
-  {
-    id: 0,
-    name: "klastill",
-    age: 24,
-    gender: "male"
-  }
-];
+  
+import { getMovies } from "./db";
 
 const resolvers = {
   Query: {
-    people: () => people
+    movies: (_, { rating, limit }) => getMovies(limit, rating)
   }
 };
 
